@@ -1,40 +1,38 @@
 package com.example.testbarang;
 
-import java.io.Serializable;
+import  java.io.Serializable;
 
 public class Barang implements Serializable{
     private String kode;
     private String nama;
 
-
     public Barang(){
+
     }
+
     public String getKode(){
         return kode;
     }
 
-    public void Barang(String kode) {
-        this.kode = kode;
+    public void setKode(String kd){
+        this.kode =kd;
     }
 
     public String getNama(){
         return nama;
     }
 
-    public Barang(String nama) {
-        this.nama = nama;
-    }
-
-    public Barang(String kode, String nama) {
-        this.kode = kode;
-        this.nama = nama;
+    public void setNama(String nama){
+        this.nama =nama;
     }
 
     @Override
-    public String toString() {
-        return "Barang{" +
-                "kode='" + kode + '\'' +
-                ", nama='" + nama + '\'' +
-                '}';
+    public String toString(){
+        return  " " +kode+ "\n" +
+                " " +nama;
+    }
+    public Barang (String kd, String nm){
+        kode = kd;
+        nama = nm;
     }
 }

@@ -2,31 +2,34 @@ package com.example.testbarang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button btnTambah;
+    private Button bTambah;
+    private Button bLihat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bTambah = (Button) findViewById(R.id.btnTambah);
+        bLihat = (Button) findViewById(R.id.btnLihat);
 
-        btnTambah = findViewById(R.id.Btntmbh);
-
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        bTambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public  void onClick (View v) {
+                startActivity(TambahData.getActIntent(MainActivity.this));
+            }
+        }) ;
+        bLihat.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TambahData.class);
-                startActivity(i);
-
+                startActivity(LihatBarang.getActIntent(MainActivity.this));
             }
         });
     }
+
 }
